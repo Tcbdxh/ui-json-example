@@ -1,0 +1,86 @@
+{
+  "no_safezone_center_screen": {
+    "type": "panel",
+    "controls": [
+      {
+        "main_inventory_screen_content@inventory_old_dx.main_inventory_screen_content": {}
+      },
+      {
+        "selected_item_details_factory": {
+          "type": "factory",
+          "control_name": "@inventory_old_dx.selected_item_details"
+        }
+      }
+    ]
+  },
+  "selected_item_details": {
+    "type": "input_panel",
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle",
+    "offset": "@wait",
+    "layer": 99,
+    "controls": [
+      {
+        "panel_content": {
+          "type": "panel",
+          "layer": 11,
+          "size": [
+            176,
+            166
+          ],
+          "controls": [
+            {
+              "dialog_bg_inventory@inventory_java_old_dx.dialog_bg_inventory": {
+                "layer": 1
+              }
+            },
+            {
+              "tab_inventory": {
+                "type": "panel",
+                "controls": [
+                  {
+                    "inventory_panel_bottom_half@common_dx.inventory_panel_bottom_half": {
+                      "offset": [
+                        7,
+                        -7
+                      ],
+                      "layer": 2,
+                      "$with_label": false,
+                      "$button_ref": "crafting.inventory_container_slot_button"
+                    }
+                  },
+                  {
+                    "item_remover@creative_old_dx.item_remover": {}
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "wait": {
+    "anim_type": "offset",
+    "$scroll": [
+      -8.5,
+      -15
+    ],
+    "from": "$scroll",
+    "to": "$scroll",
+    "duration": 1.2,
+    "next": "@letdisappear"
+  },
+  "letdisappear": {
+    "anim_type": "offset",
+    "from": [
+      0,
+      0
+    ],
+    "to": [
+      0,
+      99999
+    ],
+    "duration": 0.0001
+  }
+}
